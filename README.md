@@ -24,9 +24,9 @@ This creates a **shared care system instead of individual reminders**.
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/screenshots/create-hub.png" width="45%" alt="Create Hub"/>
+<img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/1fb0856f6c542a700eb4c800b526a7c7c9d2f18b/Create%20Hub.jpg" width="45%" alt="Create Hub"/>
 
-<img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/screenshots/join-hub.png" width="45%" alt="Join Hub"/>
+<img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/1fb0856f6c542a700eb4c800b526a7c7c9d2f18b/Join%20Hub.jpg" width="45%" alt="Join Hub"/>
 
 </div>
 
