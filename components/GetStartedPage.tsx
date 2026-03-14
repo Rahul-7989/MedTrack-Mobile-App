@@ -31,7 +31,8 @@ export const GetStartedPage: React.FC<GetStartedPageProps> = ({ onNavigate }) =>
     setLoading(true);
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const trimmedEmail = email.trim();
+      const userCredential = await createUserWithEmailAndPassword(auth, trimmedEmail, password);
       
       // Send verification email immediately
       if (userCredential.user) {

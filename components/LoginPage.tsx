@@ -21,20 +21,37 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
     setError(null);
     setLoading(true);
 
+    const trimmedEmail = email.trim();
+
+    if (!trimmedEmail.includes('@')) {
+      setError("Please enter a valid email address. (e.g. name@family.com)");
+      setLoading(false);
+      return;
+    }
+
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, trimmedEmail, password);
       const user = userCredential.user;
 
       if (user) {
         if (!user.emailVerified) {
-          onNavigate('email-verification', { name: 'Friend', gender: null });
+          setError("Your email hasn't been verified yet. Please check your inbox for the verification link, then try logging in again.");
+          setLoading(false);
           return;
         }
-        const userDoc = await getDoc(doc(db, "users", user.uid));
         
-        if (userDoc.exists()) {
-          const userData = userDoc.data() as UserInfo;
-          
+        let userData: UserInfo | null = null;
+        try {
+          const userDoc = await getDoc(doc(db, "users", user.uid));
+          if (userDoc.exists()) {
+            userData = userDoc.data() as UserInfo;
+          }
+        } catch (firestoreErr: any) {
+          console.error("Firestore read error:", firestoreErr);
+          // We don't block login if Firestore fails to read, but we should log it
+        }
+        
+        if (userData) {
           if (userData.hubId) {
             onNavigate('dashboard', userData);
           } else if (userData.pendingHubId) {
@@ -43,12 +60,37 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
             onNavigate('hub-selection', userData);
           }
         } else {
-          onNavigate('hub-selection', { name: 'Friend', gender: null });
+          // If verified but no doc exists (e.g. signed up elsewhere or skipped verification page)
+          const newUserData = {
+            name: user.displayName || 'Friend',
+            email: user.email,
+            createdAt: new Date().toISOString(),
+            hubId: null
+          };
+          
+          try {
+            await setDoc(doc(db, "users", user.uid), newUserData);
+          } catch (firestoreErr: any) {
+            console.error("Firestore write error:", firestoreErr);
+            // If we can't write the doc, we still navigate but with local state
+          }
+          
+          onNavigate('hub-selection', newUserData as UserInfo);
         }
       }
     } catch (err: any) {
-      console.error(err);
-      setError("We couldn’t sign you in.\nThe email or password doesn’t seem to match. Try Again");
+      console.error("Login error:", err);
+      
+      const errorCode = err.code;
+      if (errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found' || errorCode === 'auth/invalid-credential') {
+        setError("We couldn’t sign you in.\nThe email or password doesn’t seem to match. Try Again");
+      } else if (errorCode === 'auth/too-many-requests') {
+        setError("Too many failed login attempts. Please try again later or reset your password.");
+      } else if (errorCode === 'auth/network-request-failed') {
+        setError("Network error. Please check your internet connection and try again.");
+      } else {
+        setError("An unexpected error occurred. Please try again later.");
+      }
     } finally {
       setLoading(false);
     }

@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Navigation } from './components/Navigation';
 import { LoginPage } from './components/LoginPage';
 import { GetStartedPage } from './components/GetStartedPage';
@@ -33,6 +33,7 @@ export interface UserInfo {
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('landing');
+  const viewRef = useRef<View>(view);
   const [userInfo, setUserInfo] = useState<UserInfo>({ name: 'Friend', gender: null });
   const [pendingUserInfo, setPendingUserInfo] = useState<UserInfo | null>(null);
   const [medications, setMedications] = useState<any[]>([]);
@@ -45,6 +46,7 @@ const App: React.FC = () => {
       setUserInfo(prev => ({ ...prev, ...data }));
     }
     setView(newView);
+    viewRef.current = newView;
     window.scrollTo(0, 0);
   };
 
@@ -62,9 +64,11 @@ const App: React.FC = () => {
             setUserInfo(userData);
 
             // Global Redirect Logic
+            const currentView = viewRef.current;
             if (userData.hubId) {
-              if (['hub-selection', 'login', 'signup', 'waiting-approval', 'join-hub', 'request-declined', 'forgot-password'].includes(view)) {
+              if (['hub-selection', 'login', 'signup', 'waiting-approval', 'join-hub', 'request-declined', 'forgot-password'].includes(currentView)) {
                 setView('dashboard');
+                viewRef.current = 'dashboard';
               }
               
               // Listen to meds for CareMate context
@@ -75,14 +79,17 @@ const App: React.FC = () => {
                 });
               }
             } else if (userData.pendingHubId) {
-              if (['hub-selection', 'login', 'signup', 'join-hub', 'request-declined', 'forgot-password'].includes(view)) {
+              if (['hub-selection', 'login', 'signup', 'join-hub', 'request-declined', 'forgot-password'].includes(currentView)) {
                 setView('waiting-approval');
+                viewRef.current = 'waiting-approval';
               }
             } else {
-              if (view === 'waiting-approval') {
+              if (currentView === 'waiting-approval') {
                 setView('request-declined');
-              } else if (['login', 'signup'].includes(view)) {
+                viewRef.current = 'request-declined';
+              } else if (['login', 'signup'].includes(currentView)) {
                 setView('hub-selection');
+                viewRef.current = 'hub-selection';
               }
             }
           }
@@ -96,8 +103,10 @@ const App: React.FC = () => {
         // Reset user info on logout
         setUserInfo({ name: 'Friend', gender: null });
         setPendingUserInfo(null);
-        if (view !== 'login' && view !== 'signup' && view !== 'forgot-password' && view !== 'landing' && view !== 'email-verification') {
+        const currentView = viewRef.current;
+        if (currentView !== 'login' && currentView !== 'signup' && currentView !== 'forgot-password' && currentView !== 'landing' && currentView !== 'email-verification') {
           setView('landing');
+          viewRef.current = 'landing';
         }
       }
     });
@@ -107,7 +116,7 @@ const App: React.FC = () => {
       if (unsubscribeProfile) unsubscribeProfile();
       if (unsubscribeMeds) unsubscribeMeds();
     };
-  }, [view]);
+  }, []);
 
     const showChatbot = ['dashboard', 'profile'].includes(view) && userInfo.hubId;
 
