@@ -9,30 +9,19 @@ MedTrack is a **family-centered medication management app** that helps people ta
 
 ## 👨‍👩‍👧 Family Hub System
 
-MedTrack introduces a **Family Hub** where multiple people can manage medications together.
+MedTrack introduces a **Family Hub** where families can manage medications together.
 
 Users can:
-
 - Create a **Family Hub**
-- Join a hub using a **unique hub code**
-- Send a **join request**
-- The **hub creator approves or declines requests**
+- Join using a **unique hub code**
+- Send join requests
+- Hub creator approves or declines members
 
 This creates a **shared care system instead of individual reminders**.
 
-<br>
-
-<div align="center">
-
-<img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/1fb0856f6c542a700eb4c800b526a7c7c9d2f18b/Create%20Hub.jpg" width="45%" alt="Create Hub"/>
-
-<img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/1fb0856f6c542a700eb4c800b526a7c7c9d2f18b/Join%20Hub.jpg" width="45%" alt="Join Hub"/>
-
-</div>
-
-<p align="center">
-Create Hub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Join Hub
-</p>
+| Create Hub | Join Hub |
+|------------|----------|
+| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/1fb0856f6c542a700eb4c800b526a7c7c9d2f18b/Create%20Hub.jpg" width="350"/> | <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/1fb0856f6c542a700eb4c800b526a7c7c9d2f18b/Join%20Hub.jpg" width="350"/> |
 
 ---
 
