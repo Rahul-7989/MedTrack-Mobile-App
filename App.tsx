@@ -96,7 +96,7 @@ const App: React.FC = () => {
         // Reset user info on logout
         setUserInfo({ name: 'Friend', gender: null });
         setPendingUserInfo(null);
-        if (view !== 'login' && view !== 'signup' && view !== 'forgot-password' && view !== 'landing') {
+        if (view !== 'login' && view !== 'signup' && view !== 'forgot-password' && view !== 'landing' && view !== 'email-verification') {
           setView('landing');
         }
       }

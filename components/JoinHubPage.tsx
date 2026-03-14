@@ -90,7 +90,15 @@ export const JoinHubPage: React.FC<JoinHubPageProps> = ({ onNavigate }) => {
   const isComplete = code.every(char => char !== '');
 
   return (
-    <div className="min-h-[calc(100vh-80px)] bg-[#F4F1EC] flex flex-col items-center py-12 md:py-20 px-6 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+    <div className="min-h-[calc(100vh-80px)] bg-[#F4F1EC] flex flex-col items-center py-12 md:py-20 px-6 animate-in fade-in slide-in-from-bottom-6 duration-1000 relative">
+      <button 
+        onClick={() => onNavigate('hub-selection')}
+        className="absolute top-8 left-8 p-3 bg-white/50 rounded-full text-[#2E2A4A] hover:bg-white transition-all"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
       <div className="text-center space-y-8 mb-16 max-w-2xl">
         <div className="flex justify-center">
           <div className="bg-[#EFEAE3] p-10 rounded-[4rem] shadow-sm animate-pulse duration-[4000ms]">

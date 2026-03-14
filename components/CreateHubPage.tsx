@@ -63,7 +63,15 @@ export const CreateHubPage: React.FC<CreateHubPageProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-80px)] bg-[#F4F1EC] flex flex-col items-center py-20 px-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="min-h-[calc(100vh-80px)] bg-[#F4F1EC] flex flex-col items-center py-20 px-6 animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
+      <button 
+        onClick={() => onNavigate('hub-selection')}
+        className="absolute top-8 left-8 p-3 bg-white/50 rounded-full text-[#2E2A4A] hover:bg-white transition-all"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
       {/* Intro Section */}
       <div className="text-center space-y-8 mb-16 max-w-2xl">
         <div className="flex justify-center bg-white/30 rounded-[3rem] p-8 shadow-sm">

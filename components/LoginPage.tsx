@@ -26,6 +26,10 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
       const user = userCredential.user;
 
       if (user) {
+        if (!user.emailVerified) {
+          onNavigate('email-verification', { name: 'Friend', gender: null });
+          return;
+        }
         const userDoc = await getDoc(doc(db, "users", user.uid));
         
         if (userDoc.exists()) {
