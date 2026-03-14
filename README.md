@@ -25,41 +25,38 @@ This creates a **shared care system instead of individual reminders**.
 
 ---
 
-# 📊 Dashboard
+## 📊 Dashboard
 
-The dashboard acts as the **central hub for medication tracking**.
+The **Dashboard** acts as the central hub of MedTrack where users can manage and monitor medications.
 
-It shows:
-
+It displays:
 - Family Hub name
-- Hub code for inviting others
-- All medication cards
-- Medication status for the day
+- Hub code for inviting members
+- Medication cards for the day
+- Quick actions to add medicines
 
-This gives the entire family a **clear view of medication activity**.
-
-### 📷 Dashboard
-*(Insert screenshot here)*
+| Dashboard |
+|-----------|
+| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/Dashboard.jpg" width="500"/> |
 
 ---
 
-# 💊 Medication Cards
+## 💊 Medication Cards
 
-Every medicine is stored as a **Medication Card**.
+Each medicine is stored as a **Medication Card** to keep medication schedules organized.
 
-Each card contains:
-
+A card contains:
 - Medicine name
 - Dosage
 - Time to take
 - Assigned family member
-- Optional remarks
-- Optional image of the medicine
+- Optional remarks or image
 
-Only the **creator of the card can edit or delete it**, preventing accidental changes.
+Users can **mark medicines as taken**, helping track daily medication progress.
 
-### 📷 Medication Card
-*(Insert screenshot here)*
+| Medication Card |
+|-----------------|
+| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/Medication%20Card.jpg" width="500"/> |
 
 ---
 
@@ -77,20 +74,20 @@ This creates a **support network for medication care**.
 
 ---
 
-# 🤖 CareMate Chatbot
+## 🤖 CareMate Chatbot
 
-MedTrack includes **CareMate**, a simple assistant for medication-related questions.
+**CareMate** is MedTrack’s built-in assistant that helps users with basic medication-related questions.
 
-CareMate helps users with:
+It can:
+- Answer common medication doubts
+- Provide general medicine guidance
+- Help users understand their medication schedule
 
-- General medicine guidance
-- Understanding medication schedules
-- Answering common medication doubts
+⚠️ CareMate provides general information and does not replace professional medical advice.
 
-⚠️ *CareMate provides general information and does not replace professional medical advice.*
-
-### 📷 CareMate Chatbot
-*(Insert screenshot here)*
+| CareMate Chatbot |
+|------------------|
+| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/CareMate%20Chatbot.jpg" width="500"/> |
 
 ---
 
