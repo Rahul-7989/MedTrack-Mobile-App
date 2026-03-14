@@ -37,7 +37,7 @@ It displays:
 
 | Dashboard |
 |-----------|
-| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/Dashboard.jpg" width="500"/> |
+| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/Dashboard.jpg" width="300"/> |
 
 ---
 
@@ -56,7 +56,7 @@ Users can **mark medicines as taken**, helping track daily medication progress.
 
 | Medication Card |
 |-----------------|
-| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/Medication%20Card.jpg" width="500"/> |
+| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/Medication%20Card.jpg" width="300"/> |
 
 ---
 
@@ -87,7 +87,7 @@ It can:
 
 | CareMate Chatbot |
 |------------------|
-| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/CareMate%20Chatbot.jpg" width="500"/> |
+| <img src="https://github.com/Rahul-7989/MedTrack-Mobile-App/blob/ec1228e18ba8be8bbb66dc6d7080bd03f6bb2814/CareMate%20Chatbot.jpg" width="300"/> |
 
 ---
 
