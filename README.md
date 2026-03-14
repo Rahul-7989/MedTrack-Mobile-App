@@ -7,7 +7,7 @@ MedTrack is a **family-centered medication management app** that helps people ta
 
 ---
 
-# 👨‍👩‍👧 Family Hub System
+## 👨‍👩‍👧 Family Hub System
 
 MedTrack introduces a **Family Hub** where multiple people can manage medications together.
 
@@ -20,11 +20,19 @@ Users can:
 
 This creates a **shared care system instead of individual reminders**.
 
-### 📷 Create Hub
-*(Insert screenshot here)*
+<br>
 
-### 📷 Join Hub
-*(Insert screenshot here)*
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/screenshots/create-hub.png" width="45%" alt="Create Hub"/>
+
+<img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/screenshots/join-hub.png" width="45%" alt="Join Hub"/>
+
+</div>
+
+<p align="center">
+Create Hub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Join Hub
+</p>
 
 ---
 
