@@ -2,8 +2,6 @@
   "name": "MedTrack Mobile App",
   "description": "A visually delightful, family-centered medication management platform designed to be friendly, calm, and reassuring for all age groups.",
   "requestFramePermissions": [
-    "camera",
-    "microphone",
-    "geolocation"
+    "camera"
   ]
 }
